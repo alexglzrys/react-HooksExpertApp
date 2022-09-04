@@ -6,7 +6,7 @@ export const useFetch = (url) => {
   const [state, setState] = useState({
     data: null,
     isLoading: true,
-    error: null,
+    isError: null,
   });
 
   // Función asincrona para establecer comunicación con la API
@@ -20,14 +20,14 @@ export const useFetch = (url) => {
       setState({
         data,
         isLoading: false,
-        error: null,
+        isError: null,
       });
     } catch (e) {
       // Sucedió un error, por tanto es importante actualizar el estado
       setState({
         data: null,
         isLoading: false,
-        error: e.getMessage(),
+        isError: e.getMessage(),
       });
     }
   };
