@@ -1,5 +1,5 @@
 import React from "react";
-import { useCounter } from "../hooks/useCounter";
+import { useCounter } from "../../hooks/useCounter";
 
 export const CounterWithCustomHook = () => {
   // Usar un custom hook del tipo contador, el cual retorna un objeto con el valor del estado actual de dicho contador, y varias funciones para moduficar su valor
