@@ -6,6 +6,7 @@ import { SimpleForm } from './components/02-useEffect/SimpleForm'
 import { MultipleCustomHooks } from './components/03-ejercicios/MultipleCustomHooks'
 import { FocusScreen } from './components/04-useRef/FocusScreen'
 import { Layout } from './components/05-useLayoutEffect/Layout'
+import { CallbackHook } from './components/06-memos/CallbackHook'
 import { MemoHook } from './components/06-memos/MemoHook'
 import { Memorize } from './components/06-memos/Memorize'
 
@@ -22,6 +23,7 @@ export const HooksApp = () => {
         <Layout />
         <Memorize />
         <MemoHook />
+        <CallbackHook />
     </>
   )
 }
