@@ -7,9 +7,9 @@ export const CallbackHook = () => {
 
   // Recordar esta función
   const incrementarContador = useCallback(
-    () => {
+    (aumento) => {
         // useCounter, necesita la versión de callback para que pueda funcionar correctamente dentro del hook useCallback
-      setCounter((counter) => counter + 1)
+      setCounter((counter) => counter + aumento)
     },
     [],
   )
