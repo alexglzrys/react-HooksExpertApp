@@ -82,6 +82,14 @@ export const TodoApp = () => {
         dispatch(action);
     }
 
+    const handleToggleTodo = (id) => {
+        const action = {
+            type: '[TODO] Toggle Todo',
+            payload: id
+        };
+        dispatch(action);
+    }
+
   return (
     <div className='mt-4'>
         <h1>Todo App: 10 - <small>Pendientes: 2</small></h1>
@@ -90,7 +98,7 @@ export const TodoApp = () => {
             <div className="col-7">
                <TodoList>
                 {/* TodoItem es responsable de informar a la Aplicación cuando una tarea se debe eliminar */}
-                {todos.map(todo => <TodoItem key={todo.id} {...todo} handleRemoveTodo={handleRemoveTodo} />)}
+                {todos.map(todo => <TodoItem key={todo.id} {...todo} handleRemoveTodo={handleRemoveTodo} handleToggleTodo={handleToggleTodo} />)}
                </TodoList>
             </div>
             <div className="col-5">
