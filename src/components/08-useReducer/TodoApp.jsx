@@ -74,6 +74,14 @@ export const TodoApp = () => {
         dispatch(action);
     }
 
+    const handleRemoveTodo = (id) => {
+        const action = {
+            type: '[TODO] Remove Todo',
+            payload: id
+        };
+        dispatch(action);
+    }
+
   return (
     <div className='mt-4'>
         <h1>Todo App: 10 - <small>Pendientes: 2</small></h1>
@@ -81,7 +89,8 @@ export const TodoApp = () => {
         <div className="row">
             <div className="col-7">
                <TodoList>
-                    {todos.map(todo => <TodoItem key={todo.id} {...todo} />)}
+                {/* TodoItem es responsable de informar a la Aplicación cuando una tarea se debe eliminar */}
+                {todos.map(todo => <TodoItem key={todo.id} {...todo} handleRemoveTodo={handleRemoveTodo} />)}
                </TodoList>
             </div>
             <div className="col-5">
