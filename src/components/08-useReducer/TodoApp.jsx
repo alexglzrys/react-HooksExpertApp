@@ -20,10 +20,33 @@ const initialState = [
 ]
 
 export const TodoApp = () => {
+    /**
+     * useReducer
+     * 
+     * Es una alternativa al useState, 
+     * Se recomienda usarlo cuando la lógica de la tarea es compleja, o hay multiples cambios en el estado
+     * A diferencia de useState, se requiere de una función Reducer, que declare todas las acciones posibles a ejecutar.
+     * Las acciones se envían al reducer por medio de una función despachadora, misma que ofrece el hook
+     * 
+     * En pocas palabras nos permite controlar el estado de la aplicación, mediante el uso de un reducer; 
+     * mismo que define la lógica y las posibles tareas a ejecutar.
+     * 
+     * Recibe como argumentos, la función Reducer (misma que debemos programar nosotros) y el estado inicial
+     * Retorna el estado actual, y la función despachadora de acciones
+     */
     const [todos, dispatch] = useReducer(todoReducer, initialState);
 
     const handleNewTodo = (todo) => {
         console.log({todo});
+
+        // Generar el cuerpo de la acción a despachar en el Reducer
+        const action = {
+            type: '[TODO] Add Todo',
+            payload: todo
+        };
+
+        // Despachar la acción en el Reducer
+        dispatch(action);
     }
 
   return (
