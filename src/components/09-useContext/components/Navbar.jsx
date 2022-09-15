@@ -13,6 +13,7 @@ export const Navbar = () => {
             <Link className="nav-link" to="/login">Login</Link> */}
 
             {/* Navegar entre rutas, verificando cual es la ruta activa */}
+            <NavLink to="/" className={({isActive}) => `nav-link ${isActive ? 'active' : ''}`}>Home</NavLink>
             <NavLink to="/about" className={({isActive}) => `nav-link ${isActive ? 'active' : ''}`}>About</NavLink>
             <NavLink to="/login" className={({isActive}) => `nav-link ${isActive ? 'active' : ''}`}>Login</NavLink>
           </div>
