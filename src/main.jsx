@@ -1,12 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { HooksApp } from './HooksApp'
+import { BrowserRouter } from 'react-router-dom';
+
+// import { HooksApp } from './HooksApp'
 import './index.css'
 
 import './components/08-useReducer/intro-reducer';
+import { MainApp } from './components/09-useContext/MainApp';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  // <React.StrictMode>
-    <HooksApp />
-  // </React.StrictMode>
+  <BrowserRouter>
+    {/* <React.StrictMode> */}
+    {/* <HooksApp /> */}
+    <MainApp />
+    {/* </React.StrictMode> */}
+  </BrowserRouter>
 )
